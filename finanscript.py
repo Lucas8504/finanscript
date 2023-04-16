@@ -1,6 +1,7 @@
 
 gastos=[]
 
+option=0
 while True:
     print("""
     1) ingresar gastos
@@ -8,13 +9,16 @@ while True:
     
     """)
 
-    opcion = int(input("ingresa una opcion: "))
+    option = int(input("ingresa una opcion: "))
 
 
 
-    if opcion == 1:
+    if option == 1:
         gasto = int(input("ingresa el gasto: "))
-        gastos.insert(gasto)
+        gasto.insert(gastos)
 
-    if opcion == 2:
+    elif option == 2:
         print(gastos)
+
+    else:
+        print("No has ingresado la opcion correcta")
