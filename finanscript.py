@@ -1,5 +1,6 @@
 
-gastos=[]
+gastos = []
+descrs = []
 
 option=0
 while True:
@@ -15,10 +16,13 @@ while True:
 
     if option == 1:
         gasto = float(input("ingresa el gasto: "))
+        descr = input("Ingresa una descripcion: ")
         gastos.insert(0,gasto)
+        descrs.insert(0,descr)
 
     elif option == 2:
         print(gastos)
+        print(descrs)
 
     else:
         print("No has ingresado la opcion correcta")
