@@ -14,8 +14,8 @@ while True:
 
 
     if option == 1:
-        gasto = int(input("ingresa el gasto: "))
-        gasto.insert(gastos)
+        gasto = float(input("ingresa el gasto: "))
+        gastos.insert(0,gasto)
 
     elif option == 2:
         print(gastos)
