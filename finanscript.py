@@ -15,12 +15,19 @@ def ListSumation(a):
 
     return add
 
+def Balance():
+
+
 
 while True:
-    print("""
-    1) ingresar gastos          3) Ingresar ventas
-    2) mostrar gastos           4) Mostrar ventas
+    print(""" 
+    Elija una opcion
     
+    1) Ingresar gastos
+    2) Mostrar gastos 
+    3) Ingresar ventas
+    4) Mostrar ventas
+    5) Mostrar balance
     """)
 
     option = int(input("ingresa una opcion: "))
