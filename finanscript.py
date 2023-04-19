@@ -1,20 +1,20 @@
-
 gastos = []
 descrs = []
 ventas = []
 prodts = []
 names = []
 
-
 option = 0
+
 
 def ListSumation(a):
     if a == []:
-       add = 0
+        add = 0
     else:
-       add = a[0] + ListSumation(a[1:])
+        add = a[0] + ListSumation(a[1:])
 
     return add
+
 
 while True:
     print("""
@@ -24,8 +24,6 @@ while True:
     """)
 
     option = int(input("ingresa una opcion: "))
-
-
 
     if option == 1:
         gasto = float(input("ingresa el gasto: "))
@@ -46,6 +44,13 @@ while True:
         ventas.insert(0, venta)
         prodts.insert(0, prod)
         names.insert(0, name)
+
+    elif option == 4:
+        print(ventas)
+        print(prodts)
+        print(names)
+        TotalSell = ListSumation(ventas)
+        print(f"Total en ventas: {TotalSell}")
 
 
     else:
