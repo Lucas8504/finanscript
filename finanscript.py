@@ -3,6 +3,9 @@ descrs = []
 ventas = []
 prodts = []
 names = []
+charges = []
+prod_chrgs = []
+name_chrgs = []
 
 
 option = 0
@@ -70,8 +73,12 @@ while True:
             charge = float(input("Ingresa el valor del encargo: "))
             prod_chrg = input("Ingresa el producto encargado: ")
             name_chrg = input("Ingresa el nombre del comprador: ")
+            charges.insert(0, charge)
+            prod_chrgs.insert(0, prod_chrg)
+            name_chrgs.insert(0, name_chrg)
 
-        elif option == 7:
+
+        elif option == 8:
             break
 
         else:
