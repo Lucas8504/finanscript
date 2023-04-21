@@ -15,7 +15,9 @@ def ListSumation(a):
 
     return add
 
-def Balance():
+def Balance(a,b):
+    balance = a - b
+    return balance
 
 
 
@@ -58,6 +60,13 @@ while True:
         print(names)
         TotalSell = ListSumation(ventas)
         print(f"Total en ventas: {TotalSell}")
+
+    elif option == 5:
+        print(f"Total de gastos: {total}")
+        print(f"Total en ventas: {TotalSell}")
+        balance = Balance(TotalSell, total)
+        print(f"Balance: {balance}")
+
 
 
     else:
