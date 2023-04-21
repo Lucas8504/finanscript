@@ -30,44 +30,49 @@ while True:
     3) Ingresar ventas      6) Salir
     
     """)
+    try:
+        option = int(input("ingresa una opcion: "))
 
-    option = int(input("ingresa una opcion: "))
+        if option == 1:
+            gasto = float(input("ingresa el gasto: "))
+            descr = input("Ingresa una descripcion: ")
+            gastos.insert(0, gasto)
+            descrs.insert(0, descr)
 
-    if option == 1:
-        gasto = float(input("ingresa el gasto: "))
-        descr = input("Ingresa una descripcion: ")
-        gastos.insert(0, gasto)
-        descrs.insert(0, descr)
+        elif option == 2:
+            print(gastos)
+            print(descrs)
+            total = ListSumation(gastos)
+            print(f"Total de gastos: {total}")
 
-    elif option == 2:
-        print(gastos)
-        print(descrs)
-        total = ListSumation(gastos)
-        print(f"Total de gastos: {total}")
+        elif option == 3:
+            venta = float(input("Ingresa el valor de la venta: "))
+            prod = input("Ingresa el producto vendido: ")
+            name = input("Ingresa el nombre del comprador: ")
+            ventas.insert(0, venta)
+            prodts.insert(0, prod)
+            names.insert(0, name)
 
-    elif option == 3:
-        venta = float(input("Ingresa el valor de la venta: "))
-        prod = input("Ingresa el producto vendido: ")
-        name = input("Ingresa el nombre del comprador: ")
-        ventas.insert(0, venta)
-        prodts.insert(0, prod)
-        names.insert(0, name)
+        elif option == 4:
+            print(ventas)
+            print(prodts)
+            print(names)
+            TotalSell = ListSumation(ventas)
+            print(f"Total en ventas: ${TotalSell}")
 
-    elif option == 4:
-        print(ventas)
-        print(prodts)
-        print(names)
-        TotalSell = ListSumation(ventas)
-        print(f"Total en ventas: ${TotalSell}")
+        elif option == 5:
+            print(f"Total de gastos: ${total}")
+            print(f"Total en ventas: ${TotalSell}")
+            balance = Balance(TotalSell, total)
+            print(f"Balance: ${balance}")
 
-    elif option == 5:
-        print(f"Total de gastos: ${total}")
-        print(f"Total en ventas: ${TotalSell}")
-        balance = Balance(TotalSell, total)
-        print(f"Balance: ${balance}")
+        elif option == 6:
+            break
 
-    elif option == 6:
-        break
+        else:
+            print("No has ingresado la opcion correcta")
 
-    else:
-        print("No has ingresado la opcion correcta")
+
+    except:
+        print("Has ingresado un caracter invalido!")
+
