@@ -4,6 +4,7 @@ ventas = []
 prodts = []
 names = []
 
+
 option = 0
 
 
@@ -25,9 +26,8 @@ while True:
     print(""" 
     Elija una opcion
     
-    1) Ingresar gastos      4) Mostrar ventas
-    2) Mostrar gastos       5) Mostrar balance
-    3) Ingresar ventas      6) Salir
+    1) Ingresar gastos      3) ingresar ventas      5) Ingresar encargo     7) Mostar Balance
+    2) Mostrar gastos       4) Motrar ventas        6) Mostrar encargo      8) Salir
     
     """)
     try:
@@ -67,6 +67,11 @@ while True:
             print(f"Balance: ${balance}")
 
         elif option == 6:
+            charge = float(input("Ingresa el valor del encargo: "))
+            prod_chrg = input("Ingresa el producto encargado: ")
+            name_chrg = input("Ingresa el nombre del comprador: ")
+
+        elif option == 7:
             break
 
         else:
@@ -75,4 +80,3 @@ while True:
 
     except:
         print("Has ingresado un caracter invalido!")
-
