@@ -25,11 +25,10 @@ while True:
     print(""" 
     Elija una opcion
     
-    1) Ingresar gastos
-    2) Mostrar gastos 
-    3) Ingresar ventas
-    4) Mostrar ventas
-    5) Mostrar balance
+    1) Ingresar gastos      4) Mostrar ventas
+    2) Mostrar gastos       5) Mostrar balance
+    3) Ingresar ventas      6) Salir
+    
     """)
 
     option = int(input("ingresa una opcion: "))
@@ -59,15 +58,16 @@ while True:
         print(prodts)
         print(names)
         TotalSell = ListSumation(ventas)
-        print(f"Total en ventas: {TotalSell}")
+        print(f"Total en ventas: ${TotalSell}")
 
     elif option == 5:
-        print(f"Total de gastos: {total}")
-        print(f"Total en ventas: {TotalSell}")
+        print(f"Total de gastos: ${total}")
+        print(f"Total en ventas: ${TotalSell}")
         balance = Balance(TotalSell, total)
-        print(f"Balance: {balance}")
+        print(f"Balance: ${balance}")
 
-
+    elif option == 6:
+        break
 
     else:
         print("No has ingresado la opcion correcta")
