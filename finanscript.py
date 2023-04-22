@@ -50,6 +50,7 @@ while True:
             print(descrs)
             total = ListSumation(gastos)
             print(f"Total de gastos: {total}")
+            input()
 
         elif option == 3:
             venta = float(input("Ingresa el valor de la venta: "))
@@ -65,15 +66,22 @@ while True:
             print(names)
             TotalSell = ListSumation(ventas)
             print(f"Total en ventas: ${TotalSell}")
+            input()
 
         elif option == 7:
-            print(f"Total de gastos: ${total}")
-            print(f"Total en ventas: ${TotalSell}")
-            print(f"Total en encargos: ${TotalCharges}")
-            balance = Balance(TotalSell, total)
-            print(f"Balance: ${balance}")
-            Totalspect = Mas(balance, TotalCharges)
-            print(f"Balance mas total de encargos: ${Totalspect}")
+            try:
+
+                print(f"Total de gastos: ${total}")
+                print(f"Total en ventas: ${TotalSell}")
+                print(f"Total en encargos: ${TotalCharges}")
+                balance = Balance(TotalSell, total)
+                print(f"Balance: ${balance}")
+                Totalspect = Mas(balance, TotalCharges)
+                print(f"Balance mas total de encargos: ${Totalspect}")
+                input()
+            except:
+                print("No hay datos para un balance")
+                input()
 
         elif option == 5:
             charge = float(input("Ingresa el valor del encargo: "))
@@ -89,6 +97,7 @@ while True:
             print(name_chrgs)
             TotalCharges = ListSumation(charges)
             print(f"Total en encargos: ${TotalCharges}")
+            input()
 
 
         elif option == 8:
@@ -96,7 +105,9 @@ while True:
 
         else:
             print("No has ingresado la opcion correcta")
+            input()
 
 
     except:
         print("Has ingresado un caracter invalido!")
+        input()
