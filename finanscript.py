@@ -23,6 +23,9 @@ def Balance(a,b):
     balance = a - b
     return balance
 
+def Mas(a, b):
+    add = a + b
+    return add
 
 
 while True:
@@ -66,8 +69,11 @@ while True:
         elif option == 7:
             print(f"Total de gastos: ${total}")
             print(f"Total en ventas: ${TotalSell}")
+            print(f"Total en encargos: ${TotalCharges}")
             balance = Balance(TotalSell, total)
             print(f"Balance: ${balance}")
+            Totalspect = Mas(balance, TotalCharges)
+            print(f"Balance mas total de encargos: ${Totalspect}")
 
         elif option == 5:
             charge = float(input("Ingresa el valor del encargo: "))
@@ -82,7 +88,7 @@ while True:
             print(prod_chrgs)
             print(name_chrgs)
             TotalCharges = ListSumation(charges)
-            print(f"Total en encargos: $")
+            print(f"Total en encargos: ${TotalCharges}")
 
 
         elif option == 8:
