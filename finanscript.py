@@ -77,6 +77,13 @@ while True:
             prod_chrgs.insert(0, prod_chrg)
             name_chrgs.insert(0, name_chrg)
 
+        elif option == 7:
+            print(charges)
+            print(prod_chrgs)
+            print(name_chrgs)
+            TotalCharges = ListSumation(charges)
+            print(f"Total en encargos: $")
+
 
         elif option == 8:
             break
