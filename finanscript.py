@@ -63,13 +63,13 @@ while True:
             TotalSell = ListSumation(ventas)
             print(f"Total en ventas: ${TotalSell}")
 
-        elif option == 5:
+        elif option == 7:
             print(f"Total de gastos: ${total}")
             print(f"Total en ventas: ${TotalSell}")
             balance = Balance(TotalSell, total)
             print(f"Balance: ${balance}")
 
-        elif option == 6:
+        elif option == 5:
             charge = float(input("Ingresa el valor del encargo: "))
             prod_chrg = input("Ingresa el producto encargado: ")
             name_chrg = input("Ingresa el nombre del comprador: ")
@@ -77,7 +77,7 @@ while True:
             prod_chrgs.insert(0, prod_chrg)
             name_chrgs.insert(0, name_chrg)
 
-        elif option == 7:
+        elif option == 6:
             print(charges)
             print(prod_chrgs)
             print(name_chrgs)
