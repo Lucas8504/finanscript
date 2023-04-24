@@ -1,3 +1,6 @@
+
+
+# listas que guardan informcion ingresada por usuario
 gastos = []
 descrs = []
 ventas = []
@@ -10,19 +13,20 @@ name_chrgs = []
 
 option = 0
 
-
+# Metodo para suma del contenido de las listas
 def ListSumation(a):
     if a == []:
         add = 0
     else:
         add = a[0] + ListSumation(a[1:])
-
     return add
 
+# Metodo de balance
 def Balance(a,b):
     balance = a - b
     return balance
 
+# Metodo de suma en totales
 def Mas(a, b):
     add = a + b
     return add
