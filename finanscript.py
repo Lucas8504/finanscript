@@ -43,20 +43,20 @@ while True:
     try:
         option = int(input("ingresa una opcion: "))
 
-        if option == 1:
+        if option == 1:         # ingresar gastos
             gasto = float(input("ingresa el gasto: "))
             descr = input("Ingresa una descripcion: ")
             gastos.insert(0, gasto)
             descrs.insert(0, descr)
 
-        elif option == 2:
+        elif option == 2:       # Mostrar gastos
             print(gastos)
             print(descrs)
             total = ListSumation(gastos)
             print(f"Total de gastos: {total}")
             input()
 
-        elif option == 3:
+        elif option == 3:       # Ingresar ventas
             venta = float(input("Ingresa el valor de la venta: "))
             prod = input("Ingresa el producto vendido: ")
             name = input("Ingresa el nombre del comprador: ")
@@ -64,7 +64,7 @@ while True:
             prodts.insert(0, prod)
             names.insert(0, name)
 
-        elif option == 4:
+        elif option == 4:       # Mostrar ventas
             print(ventas)
             print(prodts)
             print(names)
@@ -72,7 +72,7 @@ while True:
             print(f"Total en ventas: ${TotalSell}")
             input()
 
-        elif option == 7:
+        elif option == 7:        # Mostrar balance
             try:
 
                 print(f"Total de gastos: ${total}")
@@ -87,7 +87,7 @@ while True:
                 print("No hay datos para un balance")
                 input()
 
-        elif option == 5:
+        elif option == 5:          # Ingresar encargos
             charge = float(input("Ingresa el valor del encargo: "))
             prod_chrg = input("Ingresa el producto encargado: ")
             name_chrg = input("Ingresa el nombre del comprador: ")
@@ -95,7 +95,7 @@ while True:
             prod_chrgs.insert(0, prod_chrg)
             name_chrgs.insert(0, name_chrg)
 
-        elif option == 6:
+        elif option == 6:           # Mostrar encargos
             print(charges)
             print(prod_chrgs)
             print(name_chrgs)
@@ -104,7 +104,7 @@ while True:
             input()
 
 
-        elif option == 8:
+        elif option == 8:           # Salir
             break
 
         else:
