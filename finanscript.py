@@ -40,7 +40,7 @@ while True:
     2) Mostrar gastos       4) Motrar ventas        6) Mostrar encargo      8) Salir
     
     """)
-    try:
+    try:         # manejo de error en caracteres invalidos
         option = int(input("ingresa una opcion: "))
 
         if option == 1:         # ingresar gastos
@@ -73,7 +73,7 @@ while True:
             input()
 
         elif option == 7:        # Mostrar balance
-            try:
+            try:        # Manejo de error por listas vacias
 
                 print(f"Total de gastos: ${total}")
                 print(f"Total en ventas: ${TotalSell}")
