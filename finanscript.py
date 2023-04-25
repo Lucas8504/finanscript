@@ -34,6 +34,7 @@ def Mas(a, b):
 
 while True:
     print(""" 
+    
     Elija una opcion
     
     1) Ingresar gastos      3) ingresar ventas      5) Ingresar encargo     7) Mostar Balance
@@ -41,7 +42,8 @@ while True:
     
     """)
     try:         # manejo de error en caracteres invalidos
-        option = int(input("ingresa una opcion: "))
+        option = int(input("""ingresa una opcion: 
+        """))
 
         if option == 1:         # ingresar gastos
             gasto = float(input("ingresa el gasto: "))
