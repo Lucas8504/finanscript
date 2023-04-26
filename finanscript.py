@@ -1,7 +1,7 @@
 from openpyxl import Workbook
 
 wb = Workbook()
-wb.save("fpdsvasos")
+wb.save("fpdsvasos.xlsx")
 
 
 # listas que guardan informcion ingresada por usuario
