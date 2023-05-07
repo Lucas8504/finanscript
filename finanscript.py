@@ -2,6 +2,8 @@ from openpyxl import Workbook
 
 wb = Workbook()
 wb.save("fpdsvasos.xlsx")
+wb.openpyxl.load_workbook("fpdsvasos.xlsx")
+workshett = wb.active
 
 
 # listas que guardan informcion ingresada por usuario
