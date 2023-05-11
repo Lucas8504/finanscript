@@ -4,7 +4,7 @@ from openpyxl import Workbook
 wb = Workbook()
 wb.save("fpdsvasos.xlsx")
 wb.openpyxl.load_workbook("fpdsvasos.xlsx")
-workshett = wb.active
+worksheet = wb.active
 
 
 # listas que guardan informcion ingresada por usuario
@@ -37,6 +37,11 @@ def Balance(a,b):
 def Mas(a, b):
     add = a + b
     return add
+
+# funcion de bolcado de datos a excel
+def ToExcel(data):
+    for i in range(len(data)):
+        worksheet.cell(row=i + 1, column=1, value=data[i])
 
 
 while True:
