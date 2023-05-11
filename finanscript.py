@@ -1,9 +1,8 @@
-from openpyxl import Workbook
+import openpyxl
 
 # Excel
-wb = Workbook()
-wb.save("fpdsvasos.xlsx")
-wb.openpyxl.load_workbook("fpdsvasos.xlsx")
+wb = openpyxl.Workbook()
+
 worksheet = wb.active
 
 
@@ -39,9 +38,9 @@ def Mas(a, b):
     return add
 
 # funcion de bolcado de datos a excel
-def ToExcel(data):
+def ToExcel(data, c):
     for i in range(len(data)):
-        worksheet.cell(row=i + 1, column=1, value=data[i])
+        worksheet.cell(row=i + 1, column=c, value=data[i])
 
 
 while True:
@@ -61,6 +60,8 @@ while True:
             descr = input("Ingresa una descripcion: ")
             gastos.insert(0, gasto)
             descrs.insert(0, descr)
+            ToExcel(gastos, 1)
+            ToExcel(descrs, 2)
 
         elif option == 2:       # Mostrar gastos
             print(gastos)
@@ -86,7 +87,7 @@ while True:
             input()
 
         elif option == 7:        # Mostrar balance
-            try:        # Manejo de error por listas vacias
+            try:                 # Manejo de error por listas vacias
 
                 print(f"Total de gastos: ${total}")
                 print(f"Total en ventas: ${TotalSell}")
@@ -128,3 +129,6 @@ while True:
     except:
         print("Has ingresado un caracter invalido!")
         input()
+
+# save the workbook
+wb.save('fpdsvasos.xlsx')
