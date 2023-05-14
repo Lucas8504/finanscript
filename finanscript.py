@@ -59,9 +59,17 @@ while True:
             gasto = float(input("ingresa el gasto: "))
             descr = input("Ingresa una descripcion: ")
             gastos.insert(0, gasto)
+            if "Gastos" in gastos:
+                gastos.remove("Gastos")
+            gastos.insert(0, "Gastos")
             descrs.insert(0, descr)
+            if "Descripcion" in descrs:
+                descrs.remove("Descripcion")
+            descrs.insert(0, "Descripcion")
             ToExcel(gastos, 1)
             ToExcel(descrs, 2)
+
+            wb.save('fpdsvasos.xlsx')
 
         elif option == 2:       # Mostrar gastos
             print(gastos)
@@ -130,5 +138,3 @@ while True:
         print("Has ingresado un caracter invalido!")
         input()
 
-# save the workbook
-wb.save('fpdsvasos.xlsx')
