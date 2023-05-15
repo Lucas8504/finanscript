@@ -72,6 +72,8 @@ while True:
             wb.save('fpdsvasos.xlsx')
 
         elif option == 2:       # Mostrar gastos
+            gastos.remove("Gastos")
+            descrs.remove("Descripcion")
             print(gastos)
             print(descrs)
             total = ListSumation(gastos)
