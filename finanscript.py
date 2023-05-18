@@ -42,6 +42,10 @@ def ToExcel(data, c):
     for i in range(len(data)):
         worksheet.cell(row=i + 1, column=c, value=data[i])
 
+# Funcion de volcado de datos a excel operacion
+def ToExcel_Op(data):
+    worksheet.cell(row=2, column=9, value=data)
+
 
 while True:
     print(""" 
@@ -78,6 +82,8 @@ while True:
             print(descrs)
             total = ListSumation(gastos)
             print(f"Total de gastos: {total}")
+            cant = len(gastos)
+
             input()
 
         elif option == 3:       # Ingresar ventas
