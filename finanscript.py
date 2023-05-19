@@ -82,7 +82,11 @@ while True:
             print(descrs)
             total = ListSumation(gastos)
             print(f"Total de gastos: {total}")
-            cant = len(gastos)
+            cant =f"=SUMA(A2:A{len(gastos) + 1})"
+            print(cant)
+            ToExcel_Op(cant)
+
+            wb.save('fpdsvasos.xlsx')
 
             input()
 
