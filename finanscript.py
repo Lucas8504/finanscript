@@ -47,6 +47,7 @@ def ToExcel(data, c):
 
 # Funcion de volcado de datos a excel operacion
 def ToExcel_Op(data):
+    worksheet.cell(row=1, column=9, value="Gastos Totales")
     worksheet.cell(row=2, column=9, value=data)
 
 
