@@ -5,7 +5,6 @@ wb = openpyxl.Workbook()
 
 worksheet = wb.active
 
-
 # listas que guardan informcion ingresada por usuario
 gastos = []
 descrs = []
@@ -16,8 +15,8 @@ charges = []
 prod_chrgs = []
 name_chrgs = []
 
-
 option = 0
+
 
 # Metodo para suma del contenido de las listas
 def ListSumation(a):
@@ -27,20 +26,24 @@ def ListSumation(a):
         add = a[0] + ListSumation(a[1:])
     return add
 
+
 # Metodo de balance
-def Balance(a,b):
+def Balance(a, b):
     balance = a - b
     return balance
+
 
 # Metodo de suma en totales
 def Mas(a, b):
     add = a + b
     return add
 
+
 # funcion de bolcado de datos a excel
 def ToExcel(data, c):
     for i in range(len(data)):
         worksheet.cell(row=i + 1, column=c, value=data[i])
+
 
 # Funcion de volcado de datos a excel operacion
 def ToExcel_Op(data):
@@ -56,10 +59,10 @@ while True:
     2) Mostrar gastos       4) Motrar ventas        6) Mostrar encargo      8) Salir
     
     """)
-    try:         # manejo de error en caracteres invalidos
+    try:  # manejo de error en caracteres invalidos
         option = int(input("""ingresa una opcion: """))
 
-        if option == 1:         # ingresar gastos
+        if option == 1:  # ingresar gastos
             gasto = float(input("ingresa el gasto: "))
             descr = input("Ingresa una descripcion: ")
             gastos.insert(0, gasto)
@@ -75,14 +78,14 @@ while True:
 
             wb.save('fpdsvasos.xlsx')
 
-        elif option == 2:       # Mostrar gastos
+        elif option == 2:  # Mostrar gastos
             gastos.remove("Gastos")
             descrs.remove("Descripcion")
             print(gastos)
             print(descrs)
             total = ListSumation(gastos)
             print(f"Total de gastos: {total}")
-            cant =f"=SUMA(A2:A{len(gastos) + 1})"
+            cant = f'=SUMA(A2:A{gastos + 1})'
             print(cant)
             ToExcel_Op(cant)
 
@@ -90,7 +93,7 @@ while True:
 
             input()
 
-        elif option == 3:       # Ingresar ventas
+        elif option == 3:  # Ingresar ventas
             venta = float(input("Ingresa el valor de la venta: "))
             prod = input("Ingresa el producto vendido: ")
             name = input("Ingresa el nombre del comprador: ")
@@ -98,7 +101,7 @@ while True:
             prodts.insert(0, prod)
             names.insert(0, name)
 
-        elif option == 4:       # Mostrar ventas
+        elif option == 4:  # Mostrar ventas
             print(ventas)
             print(prodts)
             print(names)
@@ -106,8 +109,8 @@ while True:
             print(f"Total en ventas: ${TotalSell}")
             input()
 
-        elif option == 7:        # Mostrar balance
-            try:                 # Manejo de error por listas vacias
+        elif option == 7:  # Mostrar balance
+            try:  # Manejo de error por listas vacias
 
                 print(f"Total de gastos: ${total}")
                 print(f"Total en ventas: ${TotalSell}")
@@ -121,7 +124,7 @@ while True:
                 print("No hay datos para un balance")
                 input()
 
-        elif option == 5:          # Ingresar encargos
+        elif option == 5:  # Ingresar encargos
             charge = float(input("Ingresa el valor del encargo: "))
             prod_chrg = input("Ingresa el producto encargado: ")
             name_chrg = input("Ingresa el nombre del comprador: ")
@@ -129,7 +132,7 @@ while True:
             prod_chrgs.insert(0, prod_chrg)
             name_chrgs.insert(0, name_chrg)
 
-        elif option == 6:           # Mostrar encargos
+        elif option == 6:  # Mostrar encargos
             print(charges)
             print(prod_chrgs)
             print(name_chrgs)
@@ -138,7 +141,7 @@ while True:
             input()
 
 
-        elif option == 8:           # Salir
+        elif option == 8:  # Salir
             break
 
         else:
@@ -149,4 +152,3 @@ while True:
     except:
         print("Has ingresado un caracter invalido!")
         input()
-
