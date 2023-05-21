@@ -105,7 +105,7 @@ while True:
             prodts.insert(0, prod)
             if "Productos" in prodts:
                 prodts.remove("Productos")
-            descrs.insert(0, "Productos")
+            prodts.insert(0, "Productos")
             names.insert(0, name)
             if "Nombre del comprador" in names:
                 names.remove("Nombre del comprador")
