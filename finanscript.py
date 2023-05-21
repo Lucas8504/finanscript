@@ -89,6 +89,7 @@ while True:
             cel = 2
             cant = len(gastos) + 1
             ToExcel_Op(f'=SUM(A{cel}:A{cant})')
+
             wb.save('fpdsvasos.xlsx')
 
             input()
@@ -112,6 +113,8 @@ while True:
             ToExcel(ventas, 4)
             ToExcel(prodts, 5)
             ToExcel(names, 6)
+
+            wb.save('fpdsvasos.xlsx')
 
         elif option == 4:  # Mostrar ventas
             print(ventas)
