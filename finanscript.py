@@ -47,8 +47,8 @@ def ToExcel(data, c):
 
 # Funcion de volcado de datos a excel operacion
 def ToExcel_Op(data):
-    worksheet.cell(row=1, column=9, value="Gastos Totales")
-    worksheet.cell(row=2, column=9, value=data)
+    worksheet.cell(row=1, column=13, value="Gastos Totales")
+    worksheet.cell(row=2, column=13, value=data)
 
 
 while True:
@@ -98,8 +98,20 @@ while True:
             prod = input("Ingresa el producto vendido: ")
             name = input("Ingresa el nombre del comprador: ")
             ventas.insert(0, venta)
+            if "Ventas" in ventas:
+                ventas.remove("Ventas")
+            ventas.insert(0, "Ventas")
             prodts.insert(0, prod)
+            if "Productos" in prodts:
+                prodts.remove("Productos")
+            descrs.insert(0, "Productos")
             names.insert(0, name)
+            if "Nombre del comprador" in names:
+                names.remove("Nombre del comprador")
+            names.insert(0, "Nombre del comprador")
+            ToExcel(ventas, 4)
+            ToExcel(prodts, 5)
+            ToExcel(names, 6)
 
         elif option == 4:  # Mostrar ventas
             print(ventas)
