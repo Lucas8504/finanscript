@@ -46,9 +46,9 @@ def ToExcel(data, c):
 
 
 # Funcion de volcado de datos a excel operacion
-def ToExcel_Op(data):
-    worksheet.cell(row=1, column=13, value="Gastos Totales")
-    worksheet.cell(row=2, column=13, value=data)
+def ToExcel_Op(head, data,c):
+    worksheet.cell(row=1, column=c, value=head)
+    worksheet.cell(row=2, column=c, value=data)
 
 
 while True:
@@ -88,7 +88,7 @@ while True:
             print(f"Total de gastos: {total}")
             cel = 2
             cant = len(gastos) + 1
-            ToExcel_Op(f'=SUM(A{cel}:A{cant})')
+            ToExcel_Op("Gastos Totales", f'=SUM(A{cel}:A{cant})', 13)
 
             wb.save('fpdsvasos.xlsx')
 
@@ -117,11 +117,20 @@ while True:
             wb.save('fpdsvasos.xlsx')
 
         elif option == 4:  # Mostrar ventas
+            ventas.remove("Ventas")
+            prodts.remove("Productos")
+            names.remove("Nombre del comprador")
             print(ventas)
             print(prodts)
             print(names)
             TotalSell = ListSumation(ventas)
             print(f"Total en ventas: ${TotalSell}")
+            cel = 2
+            cant = len(ventas) + 1
+            ToExcel_Op("Ventas Totales", f'=SUM(D{cel}:D{cant})', 14)
+
+            wb.save('fpdsvasos.xlsx')
+
             input()
 
         elif option == 7:  # Mostrar balance
