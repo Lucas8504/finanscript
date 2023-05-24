@@ -51,6 +51,14 @@ def ToExcel_Op(head, data,c):
     worksheet.cell(row=2, column=c, value=data)
 
 
+def header(list, valor):
+    if valor in list:
+        list.remove(valor)
+    list.insert(0, valor)
+    return list
+
+
+
 while True:
     print(""" 
     
@@ -68,9 +76,7 @@ while True:
             gasto = float(input("ingresa el gasto: "))
             descr = input("Ingresa una descripcion: ")
             gastos.insert(0, gasto)
-            if "Gastos" in gastos:
-                gastos.remove("Gastos")
-            gastos.insert(0, "Gastos")
+            gastos = header(gastos,"Gastos")
             descrs.insert(0, descr)
             if "Descripcion" in descrs:
                 descrs.remove("Descripcion")
@@ -96,7 +102,8 @@ while True:
 
             input()
 
-        elif option == 3:  # Ingresar ventas
+        # Ingresar ventas
+        elif option == 3:
             venta = float(input("Ingresa el valor de la venta: "))
             prod = input("Ingresa el producto vendido: ")
             name = input("Ingresa el nombre del comprador: ")
@@ -118,7 +125,8 @@ while True:
 
             wb.save('fpdsvasos.xlsx')
 
-        elif option == 4:  # Mostrar ventas
+        # Mostrar ventas
+        elif option == 4:
             ventas.remove("Ventas")
             prodts.remove("Productos")
             names.remove("Nombre del comprador")
@@ -135,7 +143,8 @@ while True:
 
             input()
 
-        elif option == 7:  # Mostrar balance
+        # Mostrar balance
+        elif option == 7:
             try:  # Manejo de error por listas vacias
 
                 print(f"Total de gastos: ${total}")
