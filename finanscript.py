@@ -63,7 +63,8 @@ while True:
     try:  # manejo de error en caracteres invalidos
         option = int(input("""ingresa una opcion: """))
 
-        if option == 1:  # ingresar gastos
+        # Ingresar Gsatos
+        if option == 1:
             gasto = float(input("ingresa el gasto: "))
             descr = input("Ingresa una descripcion: ")
             gastos.insert(0, gasto)
@@ -79,7 +80,8 @@ while True:
 
             wb.save('fpdsvasos.xlsx')
 
-        elif option == 2:  # Mostrar gastos
+        # Mostrar Gastos
+        elif option == 2:
             gastos.remove("Gastos")
             descrs.remove("Descripcion")
             print(gastos)
