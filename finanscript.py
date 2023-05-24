@@ -78,9 +78,7 @@ while True:
             gastos.insert(0, gasto)
             gastos = header(gastos,"Gastos")
             descrs.insert(0, descr)
-            if "Descripcion" in descrs:
-                descrs.remove("Descripcion")
-            descrs.insert(0, "Descripcion")
+            header(descrs, "Descripcion")
             ToExcel(gastos, 1)
             ToExcel(descrs, 2)
 
