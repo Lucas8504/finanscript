@@ -156,8 +156,17 @@ while True:
             prod_chrg = input("Ingresa el producto encargado: ")
             name_chrg = input("Ingresa el nombre del comprador: ")
             charges.insert(0, charge)
+            header(charges, "Valor del encargo")
             prod_chrgs.insert(0, prod_chrg)
+            header(prod_chrgs, "Producto encargado")
             name_chrgs.insert(0, name_chrg)
+            header(name_chrgs, "Nombre del comprador")
+
+            ToExcel(charges, 9)
+            ToExcel(prod_chrgs, 10)
+            ToExcel(name_chrgs, 11)
+
+            wb.save('fpdsvasos.xlsx')
 
         elif option == 6:  # Mostrar encargos
             print(charges)
