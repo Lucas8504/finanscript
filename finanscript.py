@@ -106,17 +106,11 @@ while True:
             prod = input("Ingresa el producto vendido: ")
             name = input("Ingresa el nombre del comprador: ")
             ventas.insert(0, venta)
-            if "Ventas" in ventas:
-                ventas.remove("Ventas")
-            ventas.insert(0, "Ventas")
+            header(ventas, "Ventas")
             prodts.insert(0, prod)
-            if "Productos" in prodts:
-                prodts.remove("Productos")
-            prodts.insert(0, "Productos")
+            header(prodts, "Productos")
             names.insert(0, name)
-            if "Nombre del comprador" in names:
-                names.remove("Nombre del comprador")
-            names.insert(0, "Nombre del comprador")
+            header(names, "Nombre del comprador")
             ToExcel(ventas, 4)
             ToExcel(prodts, 5)
             ToExcel(names, 6)
