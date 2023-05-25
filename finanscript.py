@@ -71,6 +71,7 @@ while True:
     try:  # manejo de error en caracteres invalidos
         option = int(input("""ingresa una opcion: """))
 
+
         # Ingresar Gsatos
         if option == 1:
             gasto = float(input("ingresa el gasto: "))
@@ -83,6 +84,7 @@ while True:
             ToExcel(descrs, 2)
 
             wb.save('fpdsvasos.xlsx')
+
 
         # Mostrar Gastos
         elif option == 2:
@@ -100,6 +102,7 @@ while True:
 
             input()
 
+
         # Ingresar ventas
         elif option == 3:
             venta = float(input("Ingresa el valor de la venta: "))
@@ -116,6 +119,7 @@ while True:
             ToExcel(names, 6)
 
             wb.save('fpdsvasos.xlsx')
+
 
         # Mostrar ventas
         elif option == 4:
@@ -135,6 +139,7 @@ while True:
 
             input()
 
+
         # Mostrar balance
         elif option == 7:
             try:  # Manejo de error por listas vacias
@@ -151,7 +156,9 @@ while True:
                 print("No hay datos para un balance")
                 input()
 
-        elif option == 5:  # Ingresar encargos
+
+        # Ingresar encargos
+        elif option == 5:
             charge = float(input("Ingresa el valor del encargo: "))
             prod_chrg = input("Ingresa el producto encargado: ")
             name_chrg = input("Ingresa el nombre del comprador: ")
@@ -168,7 +175,9 @@ while True:
 
             wb.save('fpdsvasos.xlsx')
 
-        elif option == 6:  # Mostrar encargos
+
+        # Mostrar encargos
+        elif option == 6:
             print(charges)
             print(prod_chrgs)
             print(name_chrgs)
