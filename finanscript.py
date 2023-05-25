@@ -72,7 +72,7 @@ while True:
         option = int(input("""ingresa una opcion: """))
 
 
-        # Ingresar Gsatos
+        # Ingresar Gastos
         if option == 1:
             gasto = float(input("ingresa el gasto: "))
             descr = input("Ingresa una descripcion: ")
@@ -178,11 +178,21 @@ while True:
 
         # Mostrar encargos
         elif option == 6:
+            charges.remove("Valor del encargo")
+            prod_chrgs.remove("Producto encargado")
+            name_chrgs.remove("Nombre del comprador")
             print(charges)
             print(prod_chrgs)
             print(name_chrgs)
             TotalCharges = ListSumation(charges)
             print(f"Total en encargos: ${TotalCharges}")
+
+            cel = 2
+            cant = len(charges) + 1
+            ToExcel_Op("Total de encargos", f'=SUM(I{cel}:I{cant})', 15)
+
+            wb.save('fpdsvasos.xlsx')
+
             input()
 
 
