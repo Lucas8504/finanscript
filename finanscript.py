@@ -46,9 +46,9 @@ def ToExcel(data, c):
 
 
 # Funcion de volcado de datos a excel operacion
-def ToExcel_Op(head, data,c):
-    worksheet.cell(row=1, column=c, value=head)
-    worksheet.cell(row=2, column=c, value=data)
+def ToExcel_Op(head,row1, data,row2,c):
+    worksheet.cell(row=row1, column=c, value=head)
+    worksheet.cell(row=row2, column=c, value=data)
 
 
 def header(list, valor):
@@ -96,7 +96,7 @@ while True:
             print(f"Total de gastos: {total}")
             cel = 2
             cant = len(gastos) + 1
-            ToExcel_Op("Gastos Totales", f'=SUM(A{cel}:A{cant})', 13)
+            ToExcel_Op("Gastos Totales",1, f'=SUM(A{cel}:A{cant})',2, 13)
 
             wb.save('fpdsvasos.xlsx')
 
@@ -133,7 +133,7 @@ while True:
             print(f"Total en ventas: ${TotalSell}")
             cel = 2
             cant = len(ventas) + 1
-            ToExcel_Op("Ventas Totales", f'=SUM(D{cel}:D{cant})', 14)
+            ToExcel_Op("Ventas Totales",1, f'=SUM(D{cel}:D{cant})',2, 14)
 
             wb.save('fpdsvasos.xlsx')
 
@@ -149,6 +149,8 @@ while True:
                 print(f"Total en encargos: ${TotalCharges}")
                 balance = Balance(TotalSell, total)
                 print(f"Balance: ${balance}")
+                ToExcel_Op("Balance",5, "=N2-M2",6,13)
+                wb.save('fpdsvasos.xlsx')
                 Totalspect = Mas(balance, TotalCharges)
                 print(f"Balance mas total de encargos: ${Totalspect}")
                 input()
@@ -189,7 +191,7 @@ while True:
 
             cel = 2
             cant = len(charges) + 1
-            ToExcel_Op("Total de encargos", f'=SUM(I{cel}:I{cant})', 15)
+            ToExcel_Op("Total de encargos",1, f'=SUM(I{cel}:I{cant})',2, 15)
 
             wb.save('fpdsvasos.xlsx')
 
