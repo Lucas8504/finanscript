@@ -15,7 +15,6 @@ charges = []
 prod_chrgs = []
 name_chrgs = []
 
-option = 0
 
 
 # Metodo para suma del contenido de las listas
@@ -60,6 +59,9 @@ def header(list, valor):
 
 
 while True:
+
+    option = 0
+
     print(""" 
     
     Elija una opcion
