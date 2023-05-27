@@ -56,6 +56,10 @@ def header(list, valor):
     list.insert(0, valor)
     return list
 
+def remove_str(list, data)
+    if data in list:
+        list.remove(data)
+    return list
 
 
 while True:
