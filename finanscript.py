@@ -56,7 +56,7 @@ def header(list, valor):
     list.insert(0, valor)
     return list
 
-def remove_str(list, data)
+def remove_str(list, data):
     if data in list:
         list.remove(data)
     return list
@@ -94,8 +94,8 @@ while True:
 
         # Mostrar Gastos
         elif option == 2:
-            gastos.remove("Gastos")
-            descrs.remove("Descripcion")
+            remove_str(gastos, "Gastos")
+            remove_str(descrs,"Descripcion")
             print(gastos)
             print(descrs)
             total = ListSumation(gastos)
