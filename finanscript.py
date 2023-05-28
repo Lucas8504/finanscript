@@ -84,7 +84,7 @@ while True:
             gasto = float(input("ingresa el gasto: "))
             descr = input("Ingresa una descripcion: ")
             gastos.insert(0, gasto)
-            gastos = header(gastos, "Gastos")
+            header(gastos, "Gastos")
             descrs.insert(0, descr)
             header(descrs, "Descripcion")
             ToExcel(gastos, 1)
@@ -93,7 +93,7 @@ while True:
             wb.save('fpdsvasos.xlsx')
 
 
-        # Mostrar Gastos
+        # Mostrar gastos
         elif option == 2:
             remove_str(gastos, "Gastos")
             remove_str(descrs, "Descripcion")
@@ -130,9 +130,9 @@ while True:
 
         # Mostrar ventas
         elif option == 4:
-            remove_str("Ventas", ventas)
-            remove_str("Productos", prodts)
-            remove_str("Nombre del comprador", names)
+            remove_str(ventas, "Ventas")
+            remove_str(prodts, "Productos")
+            remove_str(names, "Nombre del comprador")
             print(ventas)
             print(prodts)
             print(names)
