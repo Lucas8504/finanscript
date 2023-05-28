@@ -129,9 +129,9 @@ while True:
 
         # Mostrar ventas
         elif option == 4:
-            ventas.remove("Ventas")
-            prodts.remove("Productos")
-            names.remove("Nombre del comprador")
+            remove_str("Ventas", ventas)
+            remove_str("Productos", prodts)
+            remove_str("Nombre del comprador", names)
             print(ventas)
             print(prodts)
             print(names)
