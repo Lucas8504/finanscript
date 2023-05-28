@@ -186,9 +186,9 @@ while True:
 
         # Mostrar encargos
         elif option == 6:
-            charges.remove("Valor del encargo")
-            prod_chrgs.remove("Producto encargado")
-            name_chrgs.remove("Nombre del comprador")
+            remove_str(charges, "Valor del encargo")
+            remove_str(prod_chrgs, "Producto encargado")
+            remove_str(name_chrgs, "Nombre del comprador")
             print(charges)
             print(prod_chrgs)
             print(name_chrgs)
