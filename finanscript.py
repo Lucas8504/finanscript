@@ -1,3 +1,5 @@
+from typing import Union, Any
+
 import openpyxl
 
 # Excel
@@ -16,10 +18,9 @@ prod_chrgs = []
 name_chrgs = []
 
 
-
 # Metodo para suma del contenido de las listas
 def ListSumation(a):
-    if a == []:
+    if not a:
         add = 0
     else:
         add = a[0] + ListSumation(a[1:])
@@ -45,7 +46,7 @@ def ToExcel(data, c):
 
 
 # Funcion de volcado de datos a excel operacion
-def ToExcel_Op(head,row1, data,row2,c):
+def ToExcel_Op(head, row1, data, row2, c):
     worksheet.cell(row=row1, column=c, value=head)
     worksheet.cell(row=row2, column=c, value=data)
 
@@ -55,6 +56,7 @@ def header(list, valor):
         list.remove(valor)
     list.insert(0, valor)
     return list
+
 
 def remove_str(list, data):
     if data in list:
@@ -77,13 +79,12 @@ while True:
     try:  # manejo de error en caracteres invalidos
         option = int(input("""ingresa una opcion: """))
 
-
         # Ingresar Gastos
         if option == 1:
             gasto = float(input("ingresa el gasto: "))
             descr = input("Ingresa una descripcion: ")
             gastos.insert(0, gasto)
-            gastos = header(gastos,"Gastos")
+            gastos = header(gastos, "Gastos")
             descrs.insert(0, descr)
             header(descrs, "Descripcion")
             ToExcel(gastos, 1)
@@ -95,14 +96,14 @@ while True:
         # Mostrar Gastos
         elif option == 2:
             remove_str(gastos, "Gastos")
-            remove_str(descrs,"Descripcion")
+            remove_str(descrs, "Descripcion")
             print(gastos)
             print(descrs)
-            total = ListSumation(gastos)
+            total: Union[float, Any] = ListSumation(gastos)
             print(f"Total de gastos: {total}")
             cel = 2
             cant = len(gastos) + 1
-            ToExcel_Op("Gastos Totales",1, f'=SUM(A{cel}:A{cant})',2, 13)
+            ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
 
             wb.save('fpdsvasos.xlsx')
 
@@ -139,7 +140,7 @@ while True:
             print(f"Total en ventas: ${TotalSell}")
             cel = 2
             cant = len(ventas) + 1
-            ToExcel_Op("Ventas Totales",1, f'=SUM(D{cel}:D{cant})',2, 14)
+            ToExcel_Op("Ventas Totales", 1, f'=SUM(D{cel}:D{cant})', 2, 14)
 
             wb.save('fpdsvasos.xlsx')
 
@@ -155,7 +156,7 @@ while True:
                 print(f"Total en encargos: ${TotalCharges}")
                 balance = Balance(TotalSell, total)
                 print(f"Balance: ${balance}")
-                ToExcel_Op("Balance",5, "=N2-M2",6,13)
+                ToExcel_Op("Balance", 5, "=N2-M2", 6, 13)
                 wb.save('fpdsvasos.xlsx')
                 Totalspect = Mas(balance, TotalCharges)
                 print(f"Balance mas total de encargos: ${Totalspect}")
@@ -197,7 +198,7 @@ while True:
 
             cel = 2
             cant = len(charges) + 1
-            ToExcel_Op("Total de encargos",1, f'=SUM(I{cel}:I{cant})',2, 15)
+            ToExcel_Op("Total de encargos", 1, f'=SUM(I{cel}:I{cant})', 2, 15)
 
             wb.save('fpdsvasos.xlsx')
 
