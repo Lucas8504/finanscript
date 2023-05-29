@@ -51,6 +51,7 @@ def ToExcel_Op(head, row1, data, row2, c):
     worksheet.cell(row=row2, column=c, value=data)
 
 
+# Funcion de encabezado
 def header(list, valor):
     if valor in list:
         list.remove(valor)
@@ -58,10 +59,12 @@ def header(list, valor):
     return list
 
 
+# Funcion removedora de encabezados
 def remove_str(list, data):
     if data in list:
         list.remove(data)
     return list
+
 
 
 while True:
@@ -90,7 +93,7 @@ while True:
             ToExcel(gastos, 1)
             ToExcel(descrs, 2)
 
-            wb.save('fpdsvasos.xlsx')
+            wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
 
 
         # Mostrar gastos
