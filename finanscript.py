@@ -160,9 +160,12 @@ while True:
                 balance = Balance(TotalSell, total)
                 print(f"Balance: ${balance}")
                 ToExcel_Op("Balance", 5, "=N2-M2", 6, 13)
-                wb.save('fpdsvasos.xlsx')
+
                 Totalspect = Mas(balance, TotalCharges)
                 print(f"Balance mas total de encargos: ${Totalspect}")
+                ToExcel_Op("Balance mas total de encargos", 5, "=O2+M6", 6, 15)
+
+                wb.save('fpdsvasos.xlsx')
                 input()
             except:
                 print("No hay datos para un balance")
