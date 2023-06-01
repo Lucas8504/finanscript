@@ -1,6 +1,8 @@
 from typing import Union, Any
 
 import openpyxl
+from openpyxl.styles import PatternFill
+
 
 # Excel
 wb = openpyxl.Workbook()
@@ -16,6 +18,9 @@ names = []
 charges = []
 prod_chrgs = []
 name_chrgs = []
+
+
+fill_pattern = PatternFill(patternType='solid', fgColor='C64747')
 
 
 # Metodo para suma del contenido de las listas
@@ -107,6 +112,7 @@ while True:
             cel = 2
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
+            worksheet['M2'].fill = fill_pattern
 
             wb.save('fpdsvasos.xlsx')
 
