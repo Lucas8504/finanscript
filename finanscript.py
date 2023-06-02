@@ -74,7 +74,7 @@ def remove_str(list, data):
 
 def change_background_color(worksheet, start_row, end_row, c1, c2):
     fill = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')
-    for row in range(start_row, end_row + 1):
+    for row in range(start_row, end_row):
         for col in range(c1, c2):
             col_letter = get_column_letter(col)
             cell = worksheet['{}{}'.format(col_letter, row)]
