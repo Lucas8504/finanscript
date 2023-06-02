@@ -71,7 +71,7 @@ def remove_str(list, data):
         list.remove(data)
     return list
 
-
+# Funcion de color de fondo de celdas de excel
 def change_background_color(worksheet, start_row, end_row, c1, c2):
     fill = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')
     for row in range(start_row, end_row):
@@ -107,7 +107,6 @@ while True:
             ToExcel(gastos, 1)
             ToExcel(descrs, 2)
             celdas = len(gastos)+1
-
             change_background_color(worksheet, 1, celdas, 1, 3)
 
             wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
