@@ -2,6 +2,7 @@ from typing import Union, Any
 
 import openpyxl
 from openpyxl.styles import PatternFill
+from openpyxl.utils import get_column_letter
 
 
 # Excel
@@ -71,6 +72,14 @@ def remove_str(list, data):
     return list
 
 
+def change_background_color(worksheet, start_row, end_row, c1, c2):
+    fill = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')
+    for row in range(start_row, end_row + 1):
+        for col in range(c1, c2):
+            col_letter = get_column_letter(col)
+            cell = worksheet['{}{}'.format(col_letter, row)]
+            cell.fill = fill
+
 
 while True:
 
@@ -97,6 +106,9 @@ while True:
             header(descrs, "Descripcion")
             ToExcel(gastos, 1)
             ToExcel(descrs, 2)
+            celdas = len(gastos)+1
+
+            change_background_color(worksheet, 1, celdas, 1, 3)
 
             wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
 
@@ -112,7 +124,7 @@ while True:
             cel = 2
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
-            worksheet['M2'].fill = fill_pattern
+            worksheet['M1:M2'].fill = fill_pattern
 
             wb.save('fpdsvasos.xlsx')
 
