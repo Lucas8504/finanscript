@@ -74,7 +74,11 @@ def remove_str(list, data):
 # Funcion de color de fondo de celdas de excel
 def change_background_color(worksheet, start_row, end_row, c1, c2, color):
     fill = PatternFill(start_color=color, end_color=color, fill_type='solid')
-    end = len(end_row) + 1
+
+    if end_row is list:
+        end = len(end_row) + 1
+    else:
+        end = end_row
     for row in range(start_row, end):
         for col in range(c1, c2):
             col_letter = get_column_letter(col)
