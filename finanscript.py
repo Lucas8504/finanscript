@@ -123,7 +123,6 @@ while True:
             cel = 2
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
-            worksheet['M1:M2'].fill = fill_pattern
 
             wb.save('fpdsvasos.xlsx')
 
