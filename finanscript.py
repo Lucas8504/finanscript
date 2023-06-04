@@ -111,7 +111,7 @@ while True:
             header(descrs, "Descripcion")
             ToExcel(gastos, 1)
             ToExcel(descrs, 2)
-            change_background_color(worksheet, 1, gastos, 1, 3, 'FFC7CE')
+            change_background_color(worksheet, 1, gastos, 1, 3, 'E9C71B')
 
             wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
 
