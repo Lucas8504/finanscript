@@ -123,6 +123,7 @@ while True:
             cel = 2
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
+            change_background_color(worksheet, 1, 3, 13, 14, 'FFC7CE')
 
             wb.save('fpdsvasos.xlsx')
 
