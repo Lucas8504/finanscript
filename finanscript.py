@@ -111,7 +111,8 @@ while True:
             header(descrs, "Descripcion")
             ToExcel(gastos, 1)
             ToExcel(descrs, 2)
-            change_background_color(worksheet, 1, gastos, 1, 3, 'E9C71B')
+            change_background_color(worksheet, 2, gastos, 1, 3, 'E9C71B')
+            change_background_color(worksheet, 1, 2, 1, 3, 'E9921B')
 
             wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
 
@@ -127,7 +128,7 @@ while True:
             cel = 2
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
-            change_background_color(worksheet, 1, 3, 13, 14, 'FFC7CE')
+            change_background_color(worksheet, 1, 3, 13, 14, 'E9921B')
 
             wb.save('fpdsvasos.xlsx')
 
