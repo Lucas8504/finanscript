@@ -149,6 +149,8 @@ while True:
             ToExcel(ventas, 4)
             ToExcel(prodts, 5)
             ToExcel(names, 6)
+            change_background_color(worksheet, 2, ventas, 4, 7, '58DB4B')
+            change_background_color(worksheet, 1, 2, 4, 7, '1CBD0C')
 
             wb.save('fpdsvasos.xlsx')
 
@@ -166,6 +168,7 @@ while True:
             cel = 2
             cant = len(ventas) + 1
             ToExcel_Op("Ventas Totales", 1, f'=SUM(D{cel}:D{cant})', 2, 14)
+            change_background_color(worksheet, 1, 3, 14, 15, '1CBD0C')
 
             wb.save('fpdsvasos.xlsx')
 
