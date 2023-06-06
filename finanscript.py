@@ -72,7 +72,7 @@ def remove_str(list, data):
     return list
 
 # Funcion de color de fondo de celdas de excel
-def change_background_color(worksheet, start_row, end_row, c1, c2, color):
+def background_color(worksheet, start_row, end_row, c1, c2, color):
     fill = PatternFill(start_color=color, end_color=color, fill_type='solid')
     if isinstance(end_row, list):
         end = len(end_row) + 1
@@ -111,8 +111,8 @@ while True:
             header(descrs, "Descripcion")
             ToExcel(gastos, 1)
             ToExcel(descrs, 2)
-            change_background_color(worksheet, 2, gastos, 1, 3, 'E9C71B')
-            change_background_color(worksheet, 1, 2, 1, 3, 'E9921B')
+            background_color(worksheet, 2, gastos, 1, 3, 'E9C71B')  # Color de fondo de las celdas de excel
+            background_color(worksheet, 1, 2, 1, 3, 'E9921B')
 
             wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
 
@@ -128,7 +128,7 @@ while True:
             cel = 2
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
-            change_background_color(worksheet, 1, 3, 13, 14, 'E9921B')
+            background_color(worksheet, 1, 3, 13, 14, 'E9921B')
 
             wb.save('fpdsvasos.xlsx')
 
@@ -149,8 +149,8 @@ while True:
             ToExcel(ventas, 4)
             ToExcel(prodts, 5)
             ToExcel(names, 6)
-            change_background_color(worksheet, 2, ventas, 4, 7, '58DB4B')
-            change_background_color(worksheet, 1, 2, 4, 7, '1CBD0C')
+            background_color(worksheet, 2, ventas, 4, 7, '58DB4B')
+            background_color(worksheet, 1, 2, 4, 7, '1CBD0C')
 
             wb.save('fpdsvasos.xlsx')
 
@@ -168,7 +168,7 @@ while True:
             cel = 2
             cant = len(ventas) + 1
             ToExcel_Op("Ventas Totales", 1, f'=SUM(D{cel}:D{cant})', 2, 14)
-            change_background_color(worksheet, 1, 3, 14, 15, '1CBD0C')
+            background_color(worksheet, 1, 3, 14, 15, '1CBD0C')
 
             wb.save('fpdsvasos.xlsx')
 
