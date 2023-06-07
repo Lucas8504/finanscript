@@ -212,6 +212,9 @@ while True:
             ToExcel(prod_chrgs, 10)
             ToExcel(name_chrgs, 11)
 
+            background_color(worksheet, 2, charges, 9, 12, 'BB09F9')
+            background_color(worksheet, 1, 2, 9, 12, '9805CF')
+
             wb.save('fpdsvasos.xlsx')
 
 
@@ -229,6 +232,8 @@ while True:
             cel = 2
             cant = len(charges) + 1
             ToExcel_Op("Total de encargos", 1, f'=SUM(I{cel}:I{cant})', 2, 15)
+
+            background_color(worksheet, 1, 3, 15, 16, '9805CF')
 
             wb.save('fpdsvasos.xlsx')
 
