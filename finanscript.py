@@ -185,10 +185,11 @@ while True:
                 balance = Balance(TotalSell, total)
                 print(f"Balance: ${balance}")
                 ToExcel_Op("Balance", 5, "=N2-M2", 6, 13)
+                background_color(worksheet, 5, 7, 13, 14, '08CCDF')
                 Totalspect = Mas(balance, TotalCharges)
                 print(f"Balance mas total de encargos: ${Totalspect}")
                 ToExcel_Op("Balance mas total de encargos", 5, "=O2+M6", 6, 15)
-
+                background_color(worksheet, 5, 7, 15, 16, '0891DF')
                 wb.save('fpdsvasos.xlsx')
                 input()
             except:
