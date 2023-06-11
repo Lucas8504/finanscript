@@ -86,6 +86,13 @@ def background_color(worksheet, start_row, end_row, c1, c2, color):
             cell.fill = fill
 
 
+# funcion de ancho de celdas
+def adjust_column_width(worksheet):
+    for column_cells in worksheet.columns:
+        length = max(len(str(cell.value)) for cell in column_cells)
+        worksheet.column_dimensions[get_column_letter(column_cells[0].column)].width = length + 1
+
+
 while True:
 
     option = 0
@@ -113,6 +120,7 @@ while True:
             ToExcel(descrs, 2)
             background_color(worksheet, 2, gastos, 1, 3, 'E9C71B')  # Color de fondo de las celdas de excel
             background_color(worksheet, 1, 2, 1, 3, 'E9921B')
+            adjust_column_width(worksheet)
 
             wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
 
@@ -129,6 +137,7 @@ while True:
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
             background_color(worksheet, 1, 3, 13, 14, 'E9921B')
+            adjust_column_width(worksheet)
 
             wb.save('fpdsvasos.xlsx')
 
