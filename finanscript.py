@@ -96,7 +96,8 @@ def adjust_column_width(worksheet):
 while True:
 
     option = 0
-    adjust_column_width(worksheet)
+
+    adjust_column_width(worksheet)  # Ajuste de columnas de acuerdo al contenido de las celdas
     print(""" 
     
     Elija una opcion
