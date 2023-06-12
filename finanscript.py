@@ -96,7 +96,7 @@ def adjust_column_width(worksheet):
 while True:
 
     option = 0
-
+    adjust_column_width(worksheet)
     print(""" 
     
     Elija una opcion
@@ -120,7 +120,7 @@ while True:
             ToExcel(descrs, 2)
             background_color(worksheet, 2, gastos, 1, 3, 'E9C71B')  # Color de fondo de las celdas de excel
             background_color(worksheet, 1, 2, 1, 3, 'E9921B')
-            adjust_column_width(worksheet)
+
 
             wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
 
@@ -137,7 +137,7 @@ while True:
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
             background_color(worksheet, 1, 3, 13, 14, 'E9921B')
-            adjust_column_width(worksheet)
+
 
             wb.save('fpdsvasos.xlsx')
 
