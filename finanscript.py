@@ -198,9 +198,11 @@ while True:
                 background_color(worksheet, 5, 7, 13, 14, '08CCDF')
                 Totalspect = Mas(balance, TotalCharges)
                 print(f"Balance mas total de encargos: ${Totalspect}")
-                ToExcel_Op("Balance mas total de encargos", 5, "=O2+M6", 6, 15)
-                background_color(worksheet, 5, 7, 15, 16, '0891DF')
+                ToExcel_Op("Balance mas total de encargos", 1, "=O2+M6", 2, 16)
+                background_color(worksheet, 1, 3, 16, 17, '0891DF')
+                adjust_column_width(worksheet)
                 wb.save('fpdsvasos.xlsx')
+
                 input()
             except:
                 print("No hay datos para un balance")
