@@ -261,6 +261,6 @@ while True:
             input()
 
 
-    except:
+    except ValueError:
         print("Has ingresado un caracter invalido!")
         input()
