@@ -204,7 +204,7 @@ while True:
                 wb.save('fpdsvasos.xlsx')
 
                 input()
-            except:
+            except NameError:
                 print("No hay datos para un balance")
                 input()
 
