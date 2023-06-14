@@ -4,7 +4,6 @@ import openpyxl
 from openpyxl.styles import PatternFill
 from openpyxl.utils import get_column_letter
 
-
 # Excel
 wb = openpyxl.Workbook()
 
@@ -19,7 +18,6 @@ names = []
 charges = []
 prod_chrgs = []
 name_chrgs = []
-
 
 fill_pattern = PatternFill(patternType='solid', fgColor='C64747')
 
@@ -70,6 +68,7 @@ def remove_str(list, data):
     if data in list:
         list.remove(data)
     return list
+
 
 # Funcion de color de fondo de celdas de excel
 def background_color(worksheet, start_row, end_row, c1, c2, color):
@@ -122,8 +121,7 @@ while True:
             background_color(worksheet, 2, gastos, 1, 3, 'E9C71B')  # Color de fondo de las celdas de excel
             background_color(worksheet, 1, 2, 1, 3, 'E9921B')
 
-
-            wb.save('fpdsvasos.xlsx')                     # guarda los datos a excel
+            wb.save('fpdsvasos.xlsx')  # guarda los datos a excel
 
 
         # Mostrar gastos
@@ -138,7 +136,6 @@ while True:
             cant = len(gastos) + 1
             ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
             background_color(worksheet, 1, 3, 13, 14, 'E9921B')
-
 
             wb.save('fpdsvasos.xlsx')
 
