@@ -197,7 +197,6 @@ while True:
                 print(f"Balance mas total de encargos: ${Totalspect}")
                 ToExcel_Op("Balance mas total de encargos", 1, "=O2+M6", 2, 16)
                 background_color(worksheet, 1, 3, 16, 17, '0891DF')
-                adjust_column_width(worksheet)
                 wb.save('fpdsvasos.xlsx')
 
                 input()
