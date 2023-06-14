@@ -50,7 +50,7 @@ def to_excel(data, c):
 
 
 # Funcion de volcado de datos a excel operacion
-def ToExcel_Op(head, row1, data, row2, c):
+def to_excel_op(head, row1, data, row2, c):
     worksheet.cell(row=row1, column=c, value=head)
     worksheet.cell(row=row2, column=c, value=data)
 
@@ -134,7 +134,7 @@ while True:
             print(f"Total de gastos: {total}")
             cel = 2
             cant = len(gastos) + 1
-            ToExcel_Op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
+            to_excel_op("Gastos Totales", 1, f'=SUM(A{cel}:A{cant})', 2, 13)
             background_color(worksheet, 1, 3, 13, 14, 'E9921B')
 
             wb.save('fpdsvasos.xlsx')
@@ -174,7 +174,7 @@ while True:
             print(f"Total en ventas: ${TotalSell}")
             cel = 2
             cant = len(ventas) + 1
-            ToExcel_Op("Ventas Totales", 1, f'=SUM(D{cel}:D{cant})', 2, 14)
+            to_excel_op("Ventas Totales", 1, f'=SUM(D{cel}:D{cant})', 2, 14)
             background_color(worksheet, 1, 3, 14, 15, '1CBD0C')
 
             wb.save('fpdsvasos.xlsx')
@@ -191,11 +191,11 @@ while True:
                 print(f"Total en encargos: ${TotalCharges}")
                 balance = Balance(TotalSell, total)
                 print(f"Balance: ${balance}")
-                ToExcel_Op("Balance", 5, "=N2-M2", 6, 13)
+                to_excel_op("Balance", 5, "=N2-M2", 6, 13)
                 background_color(worksheet, 5, 7, 13, 14, '08CCDF')
                 Totalspect = mas(balance, TotalCharges)
                 print(f"Balance mas total de encargos: ${Totalspect}")
-                ToExcel_Op("Balance mas total de encargos", 1, "=O2+M6", 2, 16)
+                to_excel_op("Balance mas total de encargos", 1, "=O2+M6", 2, 16)
                 background_color(worksheet, 1, 3, 16, 17, '0891DF')
                 wb.save('fpdsvasos.xlsx')
 
@@ -240,7 +240,7 @@ while True:
 
             cel = 2
             cant = len(charges) + 1
-            ToExcel_Op("Total de encargos", 1, f'=SUM(I{cel}:I{cant})', 2, 15)
+            to_excel_op("Total de encargos", 1, f'=SUM(I{cel}:I{cant})', 2, 15)
 
             background_color(worksheet, 1, 3, 15, 16, '9805CF')
 
