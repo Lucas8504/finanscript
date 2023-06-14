@@ -23,11 +23,11 @@ fill_pattern = PatternFill(patternType='solid', fgColor='C64747')
 
 
 # Metodo para suma del contenido de las listas
-def ListSumation(a):
+def list_sumation(a):
     if not a:
         add = 0
     else:
-        add = a[0] + ListSumation(a[1:])
+        add = a[0] + list_sumation(a[1:])
     return add
 
 
@@ -38,13 +38,13 @@ def Balance(a, b):
 
 
 # Metodo de suma en totales
-def Mas(a, b):
+def mas(a, b):
     add = a + b
     return add
 
 
 # funcion de bolcado de datos a excel
-def ToExcel(data, c):
+def to_excel(data, c):
     for i in range(len(data)):
         worksheet.cell(row=i + 1, column=c, value=data[i])
 
@@ -116,8 +116,8 @@ while True:
             header(gastos, "Gastos")
             descrs.insert(0, descr)
             header(descrs, "Descripcion")
-            ToExcel(gastos, 1)
-            ToExcel(descrs, 2)
+            to_excel(gastos, 1)
+            to_excel(descrs, 2)
             background_color(worksheet, 2, gastos, 1, 3, 'E9C71B')  # Color de fondo de las celdas de excel
             background_color(worksheet, 1, 2, 1, 3, 'E9921B')
 
@@ -130,7 +130,7 @@ while True:
             remove_str(descrs, "Descripcion")
             print(gastos)
             print(descrs)
-            total: Union[float, Any] = ListSumation(gastos)
+            total: Union[float, Any] = list_sumation(gastos)
             print(f"Total de gastos: {total}")
             cel = 2
             cant = len(gastos) + 1
@@ -153,9 +153,9 @@ while True:
             header(prodts, "Productos")
             names.insert(0, name)
             header(names, "Nombre del comprador")
-            ToExcel(ventas, 4)
-            ToExcel(prodts, 5)
-            ToExcel(names, 6)
+            to_excel(ventas, 4)
+            to_excel(prodts, 5)
+            to_excel(names, 6)
             background_color(worksheet, 2, ventas, 4, 7, '58DB4B')
             background_color(worksheet, 1, 2, 4, 7, '1CBD0C')
 
@@ -170,7 +170,7 @@ while True:
             print(ventas)
             print(prodts)
             print(names)
-            TotalSell = ListSumation(ventas)
+            TotalSell = list_sumation(ventas)
             print(f"Total en ventas: ${TotalSell}")
             cel = 2
             cant = len(ventas) + 1
@@ -193,7 +193,7 @@ while True:
                 print(f"Balance: ${balance}")
                 ToExcel_Op("Balance", 5, "=N2-M2", 6, 13)
                 background_color(worksheet, 5, 7, 13, 14, '08CCDF')
-                Totalspect = Mas(balance, TotalCharges)
+                Totalspect = mas(balance, TotalCharges)
                 print(f"Balance mas total de encargos: ${Totalspect}")
                 ToExcel_Op("Balance mas total de encargos", 1, "=O2+M6", 2, 16)
                 background_color(worksheet, 1, 3, 16, 17, '0891DF')
@@ -217,9 +217,9 @@ while True:
             name_chrgs.insert(0, name_chrg)
             header(name_chrgs, "Nombre del comprador")
 
-            ToExcel(charges, 9)
-            ToExcel(prod_chrgs, 10)
-            ToExcel(name_chrgs, 11)
+            to_excel(charges, 9)
+            to_excel(prod_chrgs, 10)
+            to_excel(name_chrgs, 11)
 
             background_color(worksheet, 2, charges, 9, 12, 'BB09F9')
             background_color(worksheet, 1, 2, 9, 12, '9805CF')
@@ -235,7 +235,7 @@ while True:
             print(charges)
             print(prod_chrgs)
             print(name_chrgs)
-            TotalCharges = ListSumation(charges)
+            TotalCharges = list_sumation(charges)
             print(f"Total en encargos: ${TotalCharges}")
 
             cel = 2
