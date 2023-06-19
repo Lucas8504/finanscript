@@ -130,7 +130,7 @@ while True:
             remove_str(descrs, "Descripcion")
             print(gastos)
             print(descrs)
-            total: Union[float, Any] = list_sumation(gastos)
+            total: float = list_sumation(gastos)
             print(f"Total de gastos: {total}")
             cel = 2
             cant = len(gastos) + 1
