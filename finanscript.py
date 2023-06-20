@@ -5,6 +5,11 @@ import openpyxl
 from openpyxl.styles import PatternFill
 from openpyxl.utils import get_column_letter
 
+
+root = tk.Tk()
+root.title("Excel con Tkinter")
+
+
 # Excel
 wb = openpyxl.Workbook()
 
@@ -261,3 +266,6 @@ while True:
     except ValueError:
         print("Has ingresado un caracter invalido!")
         input()
+
+
+root.mainloop()
