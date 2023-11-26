@@ -15,6 +15,7 @@ wb = openpyxl.Workbook()
 
 worksheet = wb.active
 
+
 # listas que guardan informcion ingresada por usuario
 gastos = []
 descrs = []
