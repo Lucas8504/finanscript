@@ -38,6 +38,7 @@ def list_sumation(a):
     return add
 
 
+
 # Metodo de balance
 def Balance(a, b):
     balance = a - b
